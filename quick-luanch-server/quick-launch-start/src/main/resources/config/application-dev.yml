@@ -1,0 +1,65 @@
+server:
+  port: 8013
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/quick_launch_demo?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8
+    username: quick
+    password: quick
+    hikari:
+      # 连接池名
+      pool-name: DateHikariCP
+      # 最小空闲连接数
+      minimum-idle: 5
+      # 空闲连接存活最大时间,默认600000(10分钟)
+      idle-timeout: 180000
+      # 最大连接数,默认10
+      maximum-pool-size: 10
+      # 从连接池返回的连接的自动提交
+      auto-commit: true
+      # 连接最大存活时间,0永久存活,默认1800000(30分钟)
+      max-lifetime: 1800000
+      # 连接超时时间,默认30000(30s)
+      connection-timeout: 30000
+      # 测试连接是否可用的查询语句
+      connection-test-query: SELECT 1
+
+  redis:
+    # 超时时间
+    timeout: 10000
+    # 地址
+    host: localhost
+    # 端口
+    port: 6379
+    # 密码
+    password: 123456
+    # 数据库(索引,从0开始)
+    database: 13
+
+    lettuce:
+      cluster:
+        refresh:
+          adaptive: true
+          period: 20
+      pool:
+        # 最大连接数,默认8
+        max-active: 8
+        # 最大连接阻塞等待时间,默认-1
+        max-wait: 10000
+        # 最大空闲连接
+        max-idle: 8
+        # 最小空闲连接
+        min-idle: 1
+        # 空闲检测周期
+        time-between-eviction-runs: 5000
+
+  # 开发者工具
+  devtools:
+    # 开启热加载
+    restart:
+      enabled: true
+
+logging:
+  level:
+    com.quick: debug

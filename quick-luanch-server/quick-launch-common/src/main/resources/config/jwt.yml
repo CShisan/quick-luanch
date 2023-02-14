@@ -1,0 +1,17 @@
+jwt:
+  # jwt类型
+  type: Bearer
+  # 头标识
+  header: Authorization
+  # 公钥
+  secret: demo
+  # token时效(默认7天)
+  token-exp: 604800000
+  # 刷新token时效(默认30天)
+  refresh-token-exp: 2592000000
+  # 缓存token key前缀
+  token-key: token
+  # 缓存refresh token key前缀
+  refresh-token-key: refresh_token
+  # 缓存value前缀
+  token-value-prefix: Bearer

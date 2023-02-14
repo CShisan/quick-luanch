@@ -1,0 +1,13 @@
+spring:
+  profiles:
+    active: self
+  servlet:
+    multipart:
+      # 单个文件大小
+      max-file-size: 200MB
+      # 单个请求大小
+      max-request-size: 300MB
+
+mybatis-plus:
+  global-config:
+    banner: false

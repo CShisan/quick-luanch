@@ -1,0 +1,10 @@
+# 阿里云配置
+aliyun:
+  access-key-id: your-access-key-id
+  access-key-secret: your-access-key-secret
+  # 阿里云oss配置
+  oss:
+    endpoint: your-endpoint
+    bucket-name: your-bucket-name
+    bucket-base-path: your-bucket-base-path
+    url-prefix: your-url-prefix

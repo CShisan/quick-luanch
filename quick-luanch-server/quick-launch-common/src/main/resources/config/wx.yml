@@ -1,0 +1,4 @@
+# 微信小程序配置
+wx:
+  app-id: your-appid
+  secret: your-secret
